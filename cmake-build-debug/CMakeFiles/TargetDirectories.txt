@@ -1,0 +1,3 @@
+/Users/rfork/fillit-git/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/Users/rfork/fillit-git/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/rfork/fillit-git/cmake-build-debug/CMakeFiles/fillit_git.dir
