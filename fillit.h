@@ -6,12 +6,13 @@
 /*   By: rfork <rfork@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/28 18:23:36 by rfork             #+#    #+#             */
-/*   Updated: 2019/11/02 16:39:51 by rfork            ###   ########.fr       */
+/*   Updated: 2019/11/03 16:32:44 by rfork            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FILLIT_H
 # define FILLIT_H
+# define BUFF_SIZE 10000
 
 # include <sys/types.h>
 # include <sys/stat.h>
@@ -20,6 +21,8 @@
 
 # include "libft/libft.h"
 
+int	main(int argc, char **argv);
+int	ft_check(char **argv);
 //int	get_next_line(const int fd, char **line);
 
 #endif
