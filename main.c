@@ -6,7 +6,7 @@
 /*   By: rfork <rfork@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/28 18:23:28 by rfork             #+#    #+#             */
-/*   Updated: 2019/11/03 17:02:54 by rfork            ###   ########.fr       */
+/*   Updated: 2019/11/05 18:01:59 by null             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@ int	main(int argc, char **argv)
 	int ret;
 	char *tmp1;
 	char *tmp2;
+	int len;
+	int heg;
 
 	if (argc != 1 || (fd = open(argv[1], O_RDONLY)) < 0)
 	{
@@ -32,14 +34,36 @@ int	main(int argc, char **argv)
 //		write("error\n");
 //		exit();
 //	}
-	tmp1 = ft_strnew(0);
+	tmp = ft_strnew(0);
 	while ((ret = read(fd, buf, BUFF_SIZE)) > 0)
 	{
 		buf[ret] = '\0';
-		if (!(tmp2 = ft_strjoin(tmp1, buf)))
+		if (!(tmp2 = ft_strjoin(tmp, buf)))
 			return (-1);
-		free(tmp1);
-		tmp1 = tmp2;
+		free(tmp);
+		tmp = tmp2;
+	}
+	ret = 0;
+	len = 0;
+	heg = 0;
+	while(tmp[ret])
+	{
+		if (tmp[ret] == '.' || tmp[ret] == '#' || (tmp[ret] == '\n' && ((len + 1)mod5 == 0)))
+		{
+			if (tmp[ret] = '\n' && tmp[ret + 1] == '\n' && heg == 3)
+			{
+				ret++;
+				heg = 0;
+			}
+			heg++;
+			ret++;
+			len++;
+		}
+		else
+		{
+			write("error\n");
+			exit();
+		}
 	}
 
 	return (0);

@@ -73,4 +73,4 @@ add_executable(fillit_git
         libft/libft.h
         fillit.h
         ft_check.c
-        main.c)
+        main.c test.c)
