@@ -6,11 +6,10 @@
 /*   By: rfork <rfork@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/28 18:23:28 by rfork             #+#    #+#             */
-/*   Updated: 2019/11/24 17:05:35 by null             ###   ########.fr       */
+/*   Updated: 2019/11/25 00:24:47 by null             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
 #include "fillit.h"
 
 int	main(int argc, char **argv)
@@ -26,7 +25,7 @@ int	main(int argc, char **argv)
 	if (argc != 1 || (fd = open(argv[1], O_RDONLY)) < 0)
 	{
 		write(1, "usage: ./fillit [file name]\n, 29");
-		exit(1);
+		exit(0);
 	}
 	tmp = ft_strnew(0);
 	while ((ret = read(fd, buf, BUFF_SIZE)) > 0)
@@ -35,7 +34,7 @@ int	main(int argc, char **argv)
 		if (!(tmp2 = ft_strjoin(tmp, buf)))
 		{
 			write("error\n");
-			exit(1);
+			exit(0);
 		}
 		free(tmp);
 		tmp = tmp2;
@@ -51,7 +50,7 @@ int	main(int argc, char **argv)
 				if (!(tmp[ret - 1] == '#' || tmp[ret + 1] == '#' || tmp[ret - 5] == '#' || tmp[ret + 5] == '#'))
 				{
 					write("error\n");
-					exit(1);
+					exit(0);
 				}
 			if (tmp[ret] == '\n' && tmp[ret + 1] == '\n' && heg == 3)
 			{
@@ -65,7 +64,7 @@ int	main(int argc, char **argv)
 		else
 		{
 			write("error\n");
-			exit(1);
+			exit(0);
 		}
 	}
 	return (0);
