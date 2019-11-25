@@ -6,7 +6,7 @@
 /*   By: rfork <rfork@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/28 18:23:28 by rfork             #+#    #+#             */
-/*   Updated: 2019/11/25 16:37:45 by rfork            ###   ########.fr       */
+/*   Updated: 2019/11/25 18:41:04 by rfork            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,10 +26,13 @@ int	main(int argc, char **argv)
 	int count;
 	int x_min;
 	int y_min;
+	int i;
+	int j;
+	int smeshenie;
 
 	if (argc != 1 || (fd = open(argv[1], O_RDONLY)) < 0)
 	{
-		write(1, "usage: ./fillit [file name]\n, 29");
+		write(1, "usage: ./fillit [file name]\n", 29);
 		exit(0);
 	}
 	tmp = ft_strnew(0);
@@ -38,7 +41,7 @@ int	main(int argc, char **argv)
 		buf[ret] = '\0';
 		if (!(tmp2 = ft_strjoin(tmp, buf)))
 		{
-			write("error\n");
+			write(1, "error\n", 6);
 			exit(0);
 		}
 		free(tmp);
@@ -57,7 +60,7 @@ int	main(int argc, char **argv)
 			{
 				if (!(tmp[ret - 1] == '#' || tmp[ret + 1] == '#' || tmp[ret - 5] == '#' || tmp[ret + 5] == '#')) // проверка на наличее соединений гранями
 				{
-					write("error\n");
+					write(1, "error\n", 6);
 					exit(0);
 				}
 				if ((tmp[ret - 1] == '#' && tmp[ret + 1] == '#') ||    // проверка на наличие нескольких соединений граней
@@ -69,7 +72,7 @@ int	main(int argc, char **argv)
 					dve_grani++;
 				if (!(dve_grani && tmp[ret] == '\n' && tmp[ret + 1] == '\n' && heg == 3)) // вывод ошибки на грани
 				{
-					write("error\n");
+					write(1, "error\n", 6);
 					exit(0);
 				}
 			}
@@ -86,13 +89,13 @@ int	main(int argc, char **argv)
 		}
 		else
 		{
-			write("error\n");
+			write(1, "error\n", 6);
 			exit(0);
 		}
 	}
 	if (count < 1 || count > 26)
 	{
-		write("error\n");
+		write(1, "error\n", 6);
 		exit(0);
 	}
 	ret = 0;
@@ -123,7 +126,7 @@ int	main(int argc, char **argv)
 			heg++;
 		}
 	}
-	heg = 0;
+	i = 0;
 	while (arr[i])
 	{
 		j = 0;
@@ -133,7 +136,7 @@ int	main(int argc, char **argv)
 		y_min = 0;
 		while (arr[i][j])
 		{
-			if (!smeshenie)
+			if (!smeshenie) // нахождение минимальных координат
 			{
 				if (arr[i][j] == '\n')
 				{
@@ -154,10 +157,10 @@ int	main(int argc, char **argv)
 					smeshenie = 1;
 				j++;
 			}
-			else
+			else // смещение по координатам
 			{
 				j = 0;
-				if (arr[i][j] = '#')
+				if (arr[i][j] == '#')
 				{
 					arr[i][j - (y_min * 5) - x_min] = '#';
 					arr[i][j] = '.';
@@ -165,6 +168,12 @@ int	main(int argc, char **argv)
 				j++;
 			}
 		}
+		i++;
+	}
+	i = 0; // test
+	while (arr[i])
+	{
+		printf("%s", arr[i]);
 		i++;
 	}
 	return (0);
