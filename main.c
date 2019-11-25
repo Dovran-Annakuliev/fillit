@@ -6,7 +6,7 @@
 /*   By: rfork <rfork@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/28 18:23:28 by rfork             #+#    #+#             */
-/*   Updated: 2019/11/25 00:24:47 by null             ###   ########.fr       */
+/*   Updated: 2019/11/25 16:37:45 by rfork            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,11 @@ int	main(int argc, char **argv)
 	char *tmp2;
 	int len;
 	int heg;
+	int dve_grani;
+	char **arr;
+	int count;
+	int x_min;
+	int y_min;
 
 	if (argc != 1 || (fd = open(argv[1], O_RDONLY)) < 0)
 	{
@@ -42,20 +47,38 @@ int	main(int argc, char **argv)
 	ret = 0;
 	len = 0;
 	heg = 0;
+	count = 0;
+	dve_grani = 0;
 	while(tmp[ret])
 	{
-		if (tmp[ret] == '.' || tmp[ret] == '#' || (tmp[ret] == '\n' && ((len + 1)%5 == 0)))
+		if (tmp[ret] == '.' || tmp[ret] == '#' || (tmp[ret] == '\n' && ((len + 1)%5 == 0))) // проверка на правильность символов
 		{
 			if (tmp[ret] == '#')
-				if (!(tmp[ret - 1] == '#' || tmp[ret + 1] == '#' || tmp[ret - 5] == '#' || tmp[ret + 5] == '#'))
+			{
+				if (!(tmp[ret - 1] == '#' || tmp[ret + 1] == '#' || tmp[ret - 5] == '#' || tmp[ret + 5] == '#')) // проверка на наличее соединений гранями
 				{
 					write("error\n");
 					exit(0);
 				}
+				if ((tmp[ret - 1] == '#' && tmp[ret + 1] == '#') ||    // проверка на наличие нескольких соединений граней
+						(tmp[ret - 5] == '#' && tmp[ret + 5] == '#') ||
+						(tmp[ret - 5] == '#' || tmp[ret - 1] == '#') ||
+						(tmp[ret - 5] == '#' || tmp[ret + 1] == '#') ||
+						(tmp[ret - 1] == '#' || tmp[ret + 5] == '#') ||
+						(tmp[ret + 1] == '#' || tmp[ret + 5] == '#'))
+					dve_grani++;
+				if (!(dve_grani && tmp[ret] == '\n' && tmp[ret + 1] == '\n' && heg == 3)) // вывод ошибки на грани
+				{
+					write("error\n");
+					exit(0);
+				}
+			}
 			if (tmp[ret] == '\n' && tmp[ret + 1] == '\n' && heg == 3)
 			{
 				ret++;
 				heg = 0;
+				dve_grani = 0;
+				count++;
 			}
 			heg++;
 			ret++;
@@ -66,6 +89,83 @@ int	main(int argc, char **argv)
 			write("error\n");
 			exit(0);
 		}
+	}
+	if (count < 1 || count > 26)
+	{
+		write("error\n");
+		exit(0);
+	}
+	ret = 0;
+	heg = 0;
+	arr = (char**)malloc(sizeof(char*) * (count + 1)); // создание массива строк, где строки это карты с тетрамино
+	while (heg != count + 1)
+	{
+		if (heg == count)
+		{
+			arr[heg] = NULL;
+			ret++;
+		}
+		else
+		{
+			arr[heg] = (char*)malloc(sizeof(char) * 21);
+			len = 0;
+			while (len != 21)
+			{
+				if (tmp[ret] == '\n' && tmp[ret + 1] == '\n')
+				{
+					arr[heg][len] = '\0';
+					ret++;
+				}
+				arr[heg][len] = tmp[ret];
+				len++;
+				ret++;
+			}
+			heg++;
+		}
+	}
+	heg = 0;
+	while (arr[i])
+	{
+		j = 0;
+		heg = 0;
+		len = 0;
+		x_min = 0;
+		y_min = 0;
+		while (arr[i][j])
+		{
+			if (!smeshenie)
+			{
+				if (arr[i][j] == '\n')
+				{
+					len = 0;
+					heg++;
+				} else
+				{
+					if (arr[i][j] == '#')
+					{
+						if (i < y_min)
+							y_min = i;
+						if (j < x_min)
+							x_min = j;
+					}
+					len++;
+				}
+				if (!arr[i][j])
+					smeshenie = 1;
+				j++;
+			}
+			else
+			{
+				j = 0;
+				if (arr[i][j] = '#')
+				{
+					arr[i][j - (y_min * 5) - x_min] = '#';
+					arr[i][j] = '.';
+				}
+				j++;
+			}
+		}
+		i++;
 	}
 	return (0);
 }
