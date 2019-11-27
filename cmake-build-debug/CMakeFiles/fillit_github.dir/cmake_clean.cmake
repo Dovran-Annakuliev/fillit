@@ -62,7 +62,6 @@ file(REMOVE_RECURSE
   "CMakeFiles/fillit_github.dir/libft/ft_strtrim.c.o"
   "CMakeFiles/fillit_github.dir/libft/ft_tolower.c.o"
   "CMakeFiles/fillit_github.dir/libft/ft_toupper.c.o"
-  "CMakeFiles/fillit_github.dir/ft_check.c.o"
   "CMakeFiles/fillit_github.dir/main.c.o"
   "fillit_github.pdb"
   "fillit_github"

@@ -123,33 +123,6 @@ fillit_github/fast:
 	$(MAKE) -f CMakeFiles/fillit_github.dir/build.make CMakeFiles/fillit_github.dir/build
 .PHONY : fillit_github/fast
 
-ft_check.o: ft_check.c.o
-
-.PHONY : ft_check.o
-
-# target to build an object file
-ft_check.c.o:
-	$(MAKE) -f CMakeFiles/fillit_github.dir/build.make CMakeFiles/fillit_github.dir/ft_check.c.o
-.PHONY : ft_check.c.o
-
-ft_check.i: ft_check.c.i
-
-.PHONY : ft_check.i
-
-# target to preprocess a source file
-ft_check.c.i:
-	$(MAKE) -f CMakeFiles/fillit_github.dir/build.make CMakeFiles/fillit_github.dir/ft_check.c.i
-.PHONY : ft_check.c.i
-
-ft_check.s: ft_check.c.s
-
-.PHONY : ft_check.s
-
-# target to generate assembly for a file
-ft_check.c.s:
-	$(MAKE) -f CMakeFiles/fillit_github.dir/build.make CMakeFiles/fillit_github.dir/ft_check.c.s
-.PHONY : ft_check.c.s
-
 libft/ft_atoi.o: libft/ft_atoi.c.o
 
 .PHONY : libft/ft_atoi.o
@@ -1887,9 +1860,6 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... fillit_github"
-	@echo "... ft_check.o"
-	@echo "... ft_check.i"
-	@echo "... ft_check.s"
 	@echo "... libft/ft_atoi.o"
 	@echo "... libft/ft_atoi.i"
 	@echo "... libft/ft_atoi.s"
