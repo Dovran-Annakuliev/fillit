@@ -6,7 +6,7 @@
 /*   By: rfork <rfork@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/28 18:23:28 by rfork             #+#    #+#             */
-/*   Updated: 2019/11/27 18:19:14 by rfork            ###   ########.fr       */
+/*   Updated: 2019/11/27 19:13:19 by rfork            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,7 @@ int	main(int argc, char **argv)
 	ret = 0;
 	len = 0;
 //	heg = 0;
-	count = 0;
+	count = 1;
 	dve_grani = 0;
 	kol_resh = 0;
 	while(tmp[ret])
@@ -130,7 +130,7 @@ int	main(int argc, char **argv)
 	}
 	ret = 0;
 	heg = 0;
-	write(1,"\n\n\n\n\n", 5);
+	write(1,"\n\n\n\n\n\n\n\n\n\n", 10);
 	arr = (char**)malloc(sizeof(char*) * (count + 1)); // создание массива строк, где строки это карты с тетрамино
 	while (heg != count + 1)
 	{
@@ -144,7 +144,7 @@ int	main(int argc, char **argv)
 		{
 			arr[heg] = (char*)malloc(sizeof(char) * 21);
 			len = 0;
-			while (len != 21)
+			while (len != 20)
 			{
 				if (tmp[ret] == '\n' && tmp[ret + 1] == '\n')
 				{
@@ -158,6 +158,15 @@ int	main(int argc, char **argv)
 			heg++;
 		}
 	}
+//	i = 0;
+//	printf("%d\n", count);
+//	while (arr[i])
+//	{
+//		printf("%s", arr[i]);
+//		printf("%d\n", i);
+//		i++;
+//	}
+//	write(1,"\n\n\n\n\n\n\n\n\n\n", 10);
 	i = 0;
 	smeshenie = 0;
 	while (arr[i])
