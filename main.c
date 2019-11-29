@@ -6,7 +6,7 @@
 /*   By: rfork <rfork@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/28 18:23:28 by rfork             #+#    #+#             */
-/*   Updated: 2019/11/27 19:13:19 by rfork            ###   ########.fr       */
+/*   Updated: 2019/11/27 19:14:15 by rfork            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,13 +36,6 @@ int	main(int argc, char **argv)
 		write(1, "usage: ./fillit [file name]\n", 29);
 		exit(0);
 	}
-//	write(1,"1\n", 2);
-//	if ((fd = open(argv[1], O_RDONLY) < 0) && (read(fd, buf, 0)) < 0)
-//	{
-//		write(1, "usage: ./fillit [file name]\n", 29);
-//		exit(0);
-//	}
-//	fd = open(argv[1], O_RDONLY);
 	tmp = ft_strnew(0);
 	while ((ret = read(fd, buf, BUFF_SIZE)) > 0)
 	{
@@ -55,17 +48,13 @@ int	main(int argc, char **argv)
 		free(tmp);
 		tmp = tmp2;
 	}
-//	write(1,"2\n", 2);
 	ret = 0;
 	len = 0;
-//	heg = 0;
 	count = 1;
 	dve_grani = 0;
 	kol_resh = 0;
 	while(tmp[ret])
 	{
-//		write(1, &tmp[ret], 1);
-//		write(1,"7\n", 2);
 		if (tmp[ret] == '.' || tmp[ret] == '#' || (tmp[ret] == '\n' && ((len + 1)%5 == 0))) // проверка на правильность символов
 		{
 			if (tmp[ret] == '#')
@@ -73,7 +62,6 @@ int	main(int argc, char **argv)
 				kol_resh++;
 				if (!(tmp[ret - 1] == '#' || tmp[ret + 1] == '#' || tmp[ret - 5] == '#' || tmp[ret + 5] == '#')) // проверка на наличее соединений гранями
 				{
-//					write(1,"3\n", 2);
 					write(1, "error\n", 6);
 					exit(0);
 				}
@@ -86,37 +74,30 @@ int	main(int argc, char **argv)
 					dve_grani++;
 				if (!dve_grani && tmp[ret] == '\n' && ((len + 1)%5 == 0 && tmp[ret + 1] == '\n')) // вывод ошибки по граням
 				{
-//					write(1,"4\n", 2);
 					write(1, "error\n", 6);
 					exit(0);
 				}
 				if (kol_resh > 4)
 				{
-//					write(1,"12\n", 3);
 					write(1, "error\n", 6);
 					exit(0);
 				}
 			}
 			if (tmp[ret] == '\n' && ((len + 1)%5 == 0 && tmp[ret + 1] == '\n'))
-//			if (tmp[ret] == '\n' && tmp[ret + 1] == '\n' && heg == 3)
 			{
 				write(1, "\n\n", 2);
-//				printf("\n\nlen = %d\nret = %d\n\n", len, ret);
 				ret = ret + 2;
 				len = 0;
-//				heg = 0;
 				dve_grani = 0;
 				count++;
 				kol_resh = 0;
 			}
 			write(1, &tmp[ret], 1);
-//			heg++;
 			ret++;
 			len++;
 		}
 		else
 		{
-//			printf("\nlen = %d\nret = %d\n", len, ret);
 			write(1,"\n", 1);
 			write(1, "error\n", 6);
 			exit(0);
@@ -124,7 +105,6 @@ int	main(int argc, char **argv)
 	}
 	if (count < 1 || count > 26)
 	{
-//		write(1,"6\n", 2);
 		write(1, "error\n", 6);
 		exit(0);
 	}
@@ -158,15 +138,6 @@ int	main(int argc, char **argv)
 			heg++;
 		}
 	}
-//	i = 0;
-//	printf("%d\n", count);
-//	while (arr[i])
-//	{
-//		printf("%s", arr[i]);
-//		printf("%d\n", i);
-//		i++;
-//	}
-//	write(1,"\n\n\n\n\n\n\n\n\n\n", 10);
 	i = 0;
 	smeshenie = 0;
 	while (arr[i])
