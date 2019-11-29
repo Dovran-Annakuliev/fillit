@@ -24,6 +24,10 @@
 # include "libft/libft.h"
 
 int	main(int argc, char **argv);
-int	ft_check(char **argv);
+void	ft_error(int err);
+void	ft_check(char *tmp);
+int		ft_check_2(int ret, char *tmp, int dve_grani, int kol_resh);
+int		ft_check_3(char *tmp, int ret, int count);
+
 
 #endif
