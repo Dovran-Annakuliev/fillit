@@ -889,6 +889,32 @@ CMakeFiles/fillit_github.dir/main.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/fillit_github.dir/main.c.s"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/rfork/project/fillit/fillit-github/main.c -o CMakeFiles/fillit_github.dir/main.c.s
 
+CMakeFiles/fillit_github.dir/ft_check.c.o: CMakeFiles/fillit_github.dir/flags.make
+CMakeFiles/fillit_github.dir/ft_check.c.o: ../ft_check.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/rfork/project/fillit/fillit-github/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_65) "Building C object CMakeFiles/fillit_github.dir/ft_check.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/fillit_github.dir/ft_check.c.o   -c /Users/rfork/project/fillit/fillit-github/ft_check.c
+
+CMakeFiles/fillit_github.dir/ft_check.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/fillit_github.dir/ft_check.c.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/rfork/project/fillit/fillit-github/ft_check.c > CMakeFiles/fillit_github.dir/ft_check.c.i
+
+CMakeFiles/fillit_github.dir/ft_check.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/fillit_github.dir/ft_check.c.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/rfork/project/fillit/fillit-github/ft_check.c -o CMakeFiles/fillit_github.dir/ft_check.c.s
+
+CMakeFiles/fillit_github.dir/ft_read.c.o: CMakeFiles/fillit_github.dir/flags.make
+CMakeFiles/fillit_github.dir/ft_read.c.o: ../ft_read.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/rfork/project/fillit/fillit-github/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_66) "Building C object CMakeFiles/fillit_github.dir/ft_read.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/fillit_github.dir/ft_read.c.o   -c /Users/rfork/project/fillit/fillit-github/ft_read.c
+
+CMakeFiles/fillit_github.dir/ft_read.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/fillit_github.dir/ft_read.c.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/rfork/project/fillit/fillit-github/ft_read.c > CMakeFiles/fillit_github.dir/ft_read.c.i
+
+CMakeFiles/fillit_github.dir/ft_read.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/fillit_github.dir/ft_read.c.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/rfork/project/fillit/fillit-github/ft_read.c -o CMakeFiles/fillit_github.dir/ft_read.c.s
+
 # Object files for target fillit_github
 fillit_github_OBJECTS = \
 "CMakeFiles/fillit_github.dir/libft/ft_atoi.c.o" \
@@ -954,7 +980,9 @@ fillit_github_OBJECTS = \
 "CMakeFiles/fillit_github.dir/libft/ft_strtrim.c.o" \
 "CMakeFiles/fillit_github.dir/libft/ft_tolower.c.o" \
 "CMakeFiles/fillit_github.dir/libft/ft_toupper.c.o" \
-"CMakeFiles/fillit_github.dir/main.c.o"
+"CMakeFiles/fillit_github.dir/main.c.o" \
+"CMakeFiles/fillit_github.dir/ft_check.c.o" \
+"CMakeFiles/fillit_github.dir/ft_read.c.o"
 
 # External object files for target fillit_github
 fillit_github_EXTERNAL_OBJECTS =
@@ -1023,9 +1051,11 @@ fillit_github: CMakeFiles/fillit_github.dir/libft/ft_strtrim.c.o
 fillit_github: CMakeFiles/fillit_github.dir/libft/ft_tolower.c.o
 fillit_github: CMakeFiles/fillit_github.dir/libft/ft_toupper.c.o
 fillit_github: CMakeFiles/fillit_github.dir/main.c.o
+fillit_github: CMakeFiles/fillit_github.dir/ft_check.c.o
+fillit_github: CMakeFiles/fillit_github.dir/ft_read.c.o
 fillit_github: CMakeFiles/fillit_github.dir/build.make
 fillit_github: CMakeFiles/fillit_github.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/rfork/project/fillit/fillit-github/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_65) "Linking C executable fillit_github"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/rfork/project/fillit/fillit-github/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_67) "Linking C executable fillit_github"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/fillit_github.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

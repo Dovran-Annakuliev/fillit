@@ -4,6 +4,8 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
+  "/Users/rfork/project/fillit/fillit-github/ft_check.c" "/Users/rfork/project/fillit/fillit-github/cmake-build-debug/CMakeFiles/fillit_github.dir/ft_check.c.o"
+  "/Users/rfork/project/fillit/fillit-github/ft_read.c" "/Users/rfork/project/fillit/fillit-github/cmake-build-debug/CMakeFiles/fillit_github.dir/ft_read.c.o"
   "/Users/rfork/project/fillit/fillit-github/libft/ft_atoi.c" "/Users/rfork/project/fillit/fillit-github/cmake-build-debug/CMakeFiles/fillit_github.dir/libft/ft_atoi.c.o"
   "/Users/rfork/project/fillit/fillit-github/libft/ft_bzero.c" "/Users/rfork/project/fillit/fillit-github/cmake-build-debug/CMakeFiles/fillit_github.dir/libft/ft_bzero.c.o"
   "/Users/rfork/project/fillit/fillit-github/libft/ft_isalnum.c" "/Users/rfork/project/fillit/fillit-github/cmake-build-debug/CMakeFiles/fillit_github.dir/libft/ft_isalnum.c.o"

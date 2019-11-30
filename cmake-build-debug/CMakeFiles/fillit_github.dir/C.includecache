@@ -17,8 +17,18 @@ stdio.h
 -
 stdlib.h
 -
+unistd.h
+-
 libft/libft.h
 /Users/rfork/project/fillit/fillit-github/libft/libft.h
+
+/Users/rfork/project/fillit/fillit-github/ft_check.c
+fillit.h
+/Users/rfork/project/fillit/fillit-github/fillit.h
+
+/Users/rfork/project/fillit/fillit-github/ft_read.c
+fillit.h
+/Users/rfork/project/fillit/fillit-github/fillit.h
 
 /Users/rfork/project/fillit/fillit-github/libft/libft.h
 stdlib.h
@@ -27,8 +37,4 @@ unistd.h
 -
 string.h
 -
-
-/Users/rfork/project/fillit/fillit-github/main.c
-fillit.h
-/Users/rfork/project/fillit/fillit-github/fillit.h
 

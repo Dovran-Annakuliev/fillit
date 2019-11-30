@@ -87,6 +87,12 @@
 		<Unit filename="/Users/rfork/project/fillit/fillit-github/fillit.h">
 			<Option target="fillit_github"/>
 		</Unit>
+		<Unit filename="/Users/rfork/project/fillit/fillit-github/ft_check.c">
+			<Option target="fillit_github"/>
+		</Unit>
+		<Unit filename="/Users/rfork/project/fillit/fillit-github/ft_read.c">
+			<Option target="fillit_github"/>
+		</Unit>
 		<Unit filename="/Users/rfork/project/fillit/fillit-github/libft/ft_atoi.c">
 			<Option target="fillit_github"/>
 		</Unit>
