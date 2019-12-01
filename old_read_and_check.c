@@ -135,28 +135,29 @@ int	main(int argc, char **argv)
 		len = 0;
 		x_min = 0;
 		y_min = 0;
-		while (arr[i][j])
+		while (arr[i][j]) // нахождение минимальных координат
 		{
-			if (!smeshenie) // нахождение минимальных координат
+			if (arr[i][j] == '\n')
 			{
-				if (arr[i][j] == '\n')
+				len = 0;
+				heg++;
+			}
+			else
+			{
+				if (arr[i][j] == '#')
 				{
-					len = 0;
-					heg++;
+					if ((j / 5) < y_min)
+						y_min = (j / 5);
+					if ((j / 5) < x_min)
+						x_min = (j % 5);
 				}
-				else
-				{
-					if (arr[i][j] == '#')
-					{
-						if (i < y_min)
-							y_min = i;
-						if (j < x_min)
-							x_min = j;
-					}
 					len++;
 				}
-				if (!arr[i][j])
+				if (!arr[i][j + 1] && !arr[i + 1][0])
+				{
+					write(1, "0\n", 1);
 					smeshenie = 1;
+				}
 				j++;
 			}
 			else // смещение по координатам
@@ -164,10 +165,12 @@ int	main(int argc, char **argv)
 				j = 0;
 				if (arr[i][j] == '#')
 				{
+					write(1, "1", 1);
 					arr[i][j - (y_min * 5) - x_min] = '#';
 					arr[i][j] = '.';
 				}
 				j++;
+				write(1, "\n", 1);
 			}
 		}
 		i++;
