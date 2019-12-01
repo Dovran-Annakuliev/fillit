@@ -6,7 +6,7 @@
 /*   By: rfork <rfork@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/01 15:45:07 by rfork             #+#    #+#             */
-/*   Updated: 2019/12/01 17:09:59 by rfork            ###   ########.fr       */
+/*   Updated: 2019/12/01 18:52:25 by rfork            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,16 +16,18 @@ char	**ft_change_arr(char *tmp, int count)
 {
 	int heg;
 	int len;
-	int x_min;
-	int y_min;
+	int ret;
+	int *arr2;
 	char **arr;
 
 	heg = -1;
 	len = -1;
-	x_min = 0;
-	y_min = 0;
+	ret = 0;
+	arr2 = (int*)malloc(sizeof(int) * 52);
 	arr = ft_chenge_arr_2(tmp, count, heg, len);
-	arr = ft_change_arr_3(arr, x_min, y_min);
+	arr = ft_change_arr_3(arr, ret, arr2);
+	free(arr2);
+	arr2 = NULL;
 	return (arr);
 }
 
@@ -57,7 +59,7 @@ char	**ft_chenge_arr_2(char *tmp, int count, int heg, int len)
 	return (arr);
 }
 
-char	**ft_change_arr_3(char **arr, int x_min, int y_min)
+char	**ft_change_arr_3(char **arr, int ret, int *arr2)
 {
 	int i;
 	int j;
@@ -70,18 +72,20 @@ char	**ft_change_arr_3(char **arr, int x_min, int y_min)
 		{
 			if (arr[i][j] == '#')
 			{
-				if ((j / 5) < y_min)
-					y_min = (j / 5);
-				if ((j / 5) < x_min)
-					x_min = (j % 5);
+				if ((j / 5) < arr2[ret])
+					arr2[ret] = (j % 5);
+				if ((j / 5) < arr2[ret + 1])
+					arr2[ret + 1] = (j / 5);
 			}
 		}
+		ret = ret + 2;
 	}
-	arr = ft_change_arr_4(arr, x_min, y_min);
+	ret = 0;
+	arr = ft_change_arr_4(arr, ret, arr2);
 	return (arr);
 }
 
-char	**ft_change_arr_4(char **arr, int x_min, int y_min)
+char	**ft_change_arr_4(char **arr, int ret, int *arr2)
 {
 	int i;
 	int j;
@@ -94,10 +98,11 @@ char	**ft_change_arr_4(char **arr, int x_min, int y_min)
 		{
 			if (arr[i][j] == '#')
 			{
-				arr[i][j - (y_min * 5) - x_min] = '#';
+				arr[i][j - (arr2[ret + 1] * 5) - arr2[ret]] = '#';
 				arr[i][j] = '.';
 			}
 		}
+		ret = ret + 2;
 	}
 	return (arr);
 }
