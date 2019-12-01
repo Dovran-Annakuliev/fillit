@@ -6,7 +6,7 @@
 /*   By: rfork <rfork@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/28 18:23:36 by rfork             #+#    #+#             */
-/*   Updated: 2019/11/30 18:15:54 by rfork            ###   ########.fr       */
+/*   Updated: 2019/12/01 16:07:43 by rfork            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@
 int		main(int argc, char **argv);
 char	*ft_read(int argc, char **argv);
 void	ft_error(int err);
-void	ft_check(char *tmp);
+int	ft_check(char *tmp);
 int		ft_check_2(char *tmp, int ret, int count, int dve_grani);
 int		ft_check_3(int ret, char *tmp, int dve_grani, int count);
 int		check_4(char *tmp, int ret, int count, int check);

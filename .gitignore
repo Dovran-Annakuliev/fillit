@@ -1,3 +1,5 @@
 CMakeLists.txt
 README.md
 .idea
+a.out.dSYM
+cmake-build-debug

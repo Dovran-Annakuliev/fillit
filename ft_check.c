@@ -12,7 +12,7 @@
 
 #include "fillit.h"
 
-void	ft_check(char *tmp)
+int		ft_check(char *tmp)
 {
 	int ret;
 	int count;
@@ -22,8 +22,7 @@ void	ft_check(char *tmp)
 	count = 0;
 	dve_grani = 0;
 	count = ft_check_2(tmp, ret, count, dve_grani);
-	if (count < 1 && count > 26)
-		ft_error(0);
+	return (count);
 }
 
 int		ft_check_2(char *tmp, int ret, int count, int dve_grani)
