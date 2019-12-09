@@ -6,7 +6,7 @@
 /*   By: rfork <rfork@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/28 18:23:36 by rfork             #+#    #+#             */
-/*   Updated: 2019/12/01 18:42:31 by rfork            ###   ########.fr       */
+/*   Updated: 2019/12/09 17:29:13 by rfork            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ int		ft_check(char *tmp);
 int		ft_check_2(char *tmp, int ret, int count, int dve_grani);
 int		ft_check_3(int ret, char *tmp, int dve_grani, int count);
 int		check_4(char *tmp, int ret, int count, int check);
+int		*ft_new_change_arr(char *tmp, int count, int *arr2);
 char	**ft_change_arr(char *tmp, int count);
 char	**ft_chenge_arr_2(char *tmp, int count, int heg, int len);
 char	**ft_change_arr_3(char **arr, int ret, int *arr2);

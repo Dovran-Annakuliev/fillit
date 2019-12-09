@@ -6,7 +6,7 @@
 /*   By: rfork <rfork@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/01 15:45:07 by rfork             #+#    #+#             */
-/*   Updated: 2019/12/01 18:52:25 by rfork            ###   ########.fr       */
+/*   Updated: 2019/12/09 16:49:45 by rfork            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,7 +72,7 @@ char	**ft_change_arr_3(char **arr, int ret, int *arr2)
 		{
 			if (arr[i][j] == '#')
 			{
-				if ((j / 5) < arr2[ret])
+				if ((j % 5) < arr2[ret])
 					arr2[ret] = (j % 5);
 				if ((j / 5) < arr2[ret + 1])
 					arr2[ret + 1] = (j / 5);
