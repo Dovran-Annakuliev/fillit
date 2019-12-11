@@ -6,7 +6,7 @@
 /*   By: rfork <rfork@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/30 16:21:37 by rfork             #+#    #+#             */
-/*   Updated: 2019/12/09 17:59:04 by rfork            ###   ########.fr       */
+/*   Updated: 2019/12/11 17:38:53 by rfork            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int		ft_check(char *tmp)
 	int dve_grani;
 
 	ret = -1;
-	count = 1;
+	count = 0;
 	dve_grani = 0;
 	count = ft_check_2(tmp, ret, count, dve_grani);
 	return (count);
@@ -51,7 +51,7 @@ int		ft_check_2(char *tmp, int ret, int count, int dve_grani)
 		else
 			ft_error(0);
 	}
-	return (count);
+	return (++count);
 }
 
 int		ft_check_3(int ret, char *tmp, int dve_grani, int count)
@@ -66,7 +66,7 @@ int		ft_check_3(int ret, char *tmp, int dve_grani, int count)
 		|| (tmp[ret - 1] == '#' || tmp[ret + 5] == '#')
 		|| (tmp[ret + 1] == '#' || tmp[ret + 5] == '#'))
 		dve_grani++;
-	if (tmp[ret] == '\n' && tmp[ret + 1] == '\n' && (ret - count/* + 1*/) % 5 == 0
+	if (tmp[ret] == '\n' && tmp[ret + 1] == '\n' && (ret - count + 1) % 5 == 0
 		&& !dve_grani)
 		ft_error(0);
 	return (dve_grani);
@@ -77,10 +77,10 @@ int		check_4(char *tmp, int ret, int count, int check)
 	if (check == 1)
 	{
 		if (tmp[ret] == '\n' && tmp[ret + 1] == '\n'
-			&& (ret - count/* + 1*/) % 5 == 0)
+			&& (ret - count + 1) % 5 == 0)
 			return (1);
 	}
-	else if (tmp[ret] == '\n' && (ret - count/* + 1*/) % 5 == 0)
+	else if (tmp[ret] == '\n' && (ret - count + 1) % 5 == 0)
 		return (1);
 	return (0);
 }

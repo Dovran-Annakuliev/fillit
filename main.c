@@ -6,7 +6,7 @@
 /*   By: rfork <rfork@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/28 18:23:28 by rfork             #+#    #+#             */
-/*   Updated: 2019/12/09 17:53:47 by rfork            ###   ########.fr       */
+/*   Updated: 2019/12/11 18:34:00 by rfork            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,8 @@ int	main(int argc, char **argv)
 	printf("\n\n\n\n\n");
 	arr2 = (int*)malloc(sizeof(int) * (count * 8));
 	arr2 = ft_new_change_arr(arr, count, arr2);
-//	while (++i != (count * 8))
-//		printf("%d\n", arr2[i]);
+	while (++i != (count * 8))
+		printf("%d\n", arr2[i]);
 //	arr2 = ft_change_arr(arr, count);
 //	while (arr2[++i])
 //	{

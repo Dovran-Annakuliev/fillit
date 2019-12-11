@@ -160,7 +160,7 @@ int	main(int argc, char **argv)
 				}
 				j++;
 			}
-			else // смещение по координатам
+			else /* смещение по координатам */
 			{
 				j = 0;
 				if (arr[i][j] == '#')
@@ -175,7 +175,7 @@ int	main(int argc, char **argv)
 		}
 		i++;
 	}
-	i = 0; // test
+	i = 0; /* test */
 	while (arr[i])
 	{
 		printf("%s\n", arr[i]);
