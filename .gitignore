@@ -4,3 +4,4 @@ README.md
 a.out.dSYM
 cmake-build-debug
 libft/*.o
+a.out

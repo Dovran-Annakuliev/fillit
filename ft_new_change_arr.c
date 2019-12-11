@@ -6,7 +6,7 @@
 /*   By: rfork <rfork@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/09 16:49:48 by rfork             #+#    #+#             */
-/*   Updated: 2019/12/11 19:04:18 by rfork            ###   ########.fr       */
+/*   Updated: 2019/12/11 19:22:28 by rfork            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ int *ft_new_change_arr(char *tmp, int count, int *arr2)
 	while (++i < (count * 2))
 		arr[i] = 7;
 	i = -1;
-	while (tmp[++i])
+	while (tmp[++i])              // нахождение и запись в массив смещений
 	{
 		if (tmp[i] == '#')
 		{
@@ -50,7 +50,7 @@ int *ft_new_change_arr(char *tmp, int count, int *arr2)
 	ret2 = 0;
 	ret = 0;
 	count2 = 0;
-	while (tmp[++i])
+	while (tmp[++i])                   // запись в новый массив координат со смещением
 	{
 		if (tmp[i] == '#')
 		{
@@ -64,5 +64,6 @@ int *ft_new_change_arr(char *tmp, int count, int *arr2)
 			count2++;
 		}
 	}
+	free (arr);
 	return (arr2);
 }
