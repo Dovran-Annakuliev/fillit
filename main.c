@@ -6,7 +6,7 @@
 /*   By: rfork <rfork@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/28 18:23:28 by rfork             #+#    #+#             */
-/*   Updated: 2019/12/11 19:00:42 by rfork            ###   ########.fr       */
+/*   Updated: 2019/12/11 20:06:29 by rfork            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,8 @@
 int	main(int argc, char **argv)
 {
 	char	*arr;
-	int 	*arr2;
+	int		*arr2;
 	int		i;
-//	int		j;
 	int		count;
 
 	i = -1;
@@ -25,20 +24,18 @@ int	main(int argc, char **argv)
 	count = ft_check(arr);
 	printf("%s", arr);
 	printf("\ncount = %d\n", count);
-	printf("\n\n\n\n\n");
 	arr2 = (int*)malloc(sizeof(int) * (count * 8));
-	arr2 = ft_new_change_arr(arr, count, arr2);
+	arr2 = ft_change_arr(arr, count, arr2);
 	while (++i != (count * 8))
-		printf("%d\n", arr2[i]);
-	free (arr);
-	free (arr2);
-//	arr2 = ft_change_arr(arr, count);
-//	while (arr2[++i])
-//	{
-//		j = -1;
-//		while (arr2[i][++j])
-//			printf("%s", arr2[i]);
-//	}
-	ft_strdel(&arr);
+	{
+		if (i % 8 == 0)
+			printf("\n\n");
+		if (i % 2 == 0)
+			printf("x = %d\n", arr2[i]);
+		else
+			printf("y = %d\n", arr2[i]);
+	}
+	free(arr);
+	free(arr2);
 	return (0);
 }
