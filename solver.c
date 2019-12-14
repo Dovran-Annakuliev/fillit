@@ -6,7 +6,7 @@
 /*   By: ltammie <ltammie@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/14 18:32:43 by ltammie           #+#    #+#             */
-/*   Updated: 2019/12/14 20:44:17 by ltammie          ###   ########.fr       */
+/*   Updated: 2019/12/14 21:10:35 by ltammie          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,15 @@ static int		place_piece(char **map, t_tetr **current_piece, char letter)
 	return (0);
 }
 
+static void		remove_piece(char **map, t_tetr **current_piece)
+{
+	map[(*current_piece)->x1][(*current_piece)->y1] = '.';
+	map[(*current_piece)->x2][(*current_piece)->y2] = '.';
+	map[(*current_piece)->x3][(*current_piece)->y3] = '.';
+	map[(*current_piece)->x4][(*current_piece)->y4] = '.';
+	(*current_piece)->placed = 0;
+}
+
 int 	solver(char **map, t_tetr **current_piece, char letter, int dim)
 {
 	int		i;
@@ -52,7 +61,7 @@ int 	solver(char **map, t_tetr **current_piece, char letter, int dim)
 	int 	shift_i;
 	int		shift_j;
 
-	//ft_putchar(letter);
+	ft_putchar(letter);
 	i = 0;
 	while (i < dim)
 	{
@@ -69,7 +78,7 @@ int 	solver(char **map, t_tetr **current_piece, char letter, int dim)
 					if((*current_piece)->next != NULL)
 					{
 						if ((solver(map, &(*current_piece)->next, letter + 1, dim)) == 0)
-							(*current_piece)->placed = 0;
+							remove_piece(map, current_piece);
 					}
 					else
 						if ((*current_piece)->placed == 1)
