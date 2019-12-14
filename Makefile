@@ -6,13 +6,13 @@
 #    By: rfork <rfork@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/09/06 17:29:02 by rfork             #+#    #+#              #
-#    Updated: 2019/12/14 14:35:43 by rfork            ###   ########.fr        #
+#    Updated: 2019/11/02 16:39:51 by rfork            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 GCC = gcc -Wall -Wextra -Werror
 NAME = fillit
-SRCS = main.c ft_read.c ft_check.c ft_change_arr.c
+SRCS = main.c
 OBJS = $(SRCS:.c=.o)
 HEAD = -c -I fillit.h
 LIB = -L libft -lft
@@ -22,10 +22,8 @@ all: $(NAME)
 %.o: %.c
 		$(GCC) -c $<
 
-lib:
-make -C libft
-
-$(NAME): $(OBJS) lib
+$(NAME): $(OBJS)
+		make -C libft
 		$(GCC) $(OBJS) $(LIB) -o $(NAME)
 
 clean:
