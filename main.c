@@ -6,7 +6,7 @@
 /*   By: rfork <rfork@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/28 18:23:28 by rfork             #+#    #+#             */
-/*   Updated: 2019/12/14 19:42:32 by ltammie          ###   ########.fr       */
+/*   Updated: 2019/12/14 21:15:58 by ltammie          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,16 +27,18 @@ int	main(int argc, char **argv)
 	printf("\ncount = %d\n", count);
 	arr2 = (int*)malloc(sizeof(int) * (count * 8));
 	arr2 = ft_change_arr(arr, count, arr2);
-	while (++i != (count * 8))
+	/*
+	 * while (++i != (count * 8))
 	{
 		if (i % 8 == 0)
 			printf("\n\n");
 		printf("%d", arr2[i]);
-		//if (i % 2 == 0)
-			//printf(" ", arr2[i]);
-//		else
-//			printf("y = %d\n", arr2[i]);
+		if (i % 2 == 0)
+			printf(" ", arr2[i]);
+		else
+			printf("y = %d\n", arr2[i]);
 	}
+	 */
 	i = -1;
 	head = NULL;
 	while (++i < (count * 8))
@@ -56,7 +58,8 @@ int	main(int argc, char **argv)
 	free(arr2);
 
 	//printing list
-	printf("\nprinting list\n");
+	/*
+	 * printf("\nprinting list\n");
 	t_tetr *tmp = head;
 	while(tmp)
 	{
@@ -67,6 +70,7 @@ int	main(int argc, char **argv)
 		printf("%d - %d\n", tmp->x4, tmp->y4);
 		tmp = tmp->next;
 	}
+	*/
 
 	govnokod(&head);
 	return (0);

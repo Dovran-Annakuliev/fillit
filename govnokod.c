@@ -6,7 +6,7 @@
 /*   By: ltammie <ltammie@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/14 19:36:22 by ltammie           #+#    #+#             */
-/*   Updated: 2019/12/14 20:48:51 by ltammie          ###   ########.fr       */
+/*   Updated: 2019/12/14 21:13:55 by ltammie          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,13 +42,13 @@ void	govnokod(t_tetr **head)
 	map = create_map(dim);
 	while (1)
 	{
+		//ft_putnbr(dim);
 		if ((solver(map, head, letter, dim)) == 1)
 		{
 			print_map(map, dim);
 			break;
 		}
 		dim++;
-		ft_putnbr(dim);
 		map = create_map(dim);
 	}
 
