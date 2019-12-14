@@ -6,10 +6,9 @@
 /*   By: ltammie <ltammie@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/14 19:36:22 by ltammie           #+#    #+#             */
-/*   Updated: 2019/12/14 19:36:22 by ltammie          ###   ########.fr       */
+/*   Updated: 2019/12/14 20:46:51 by ltammie          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 
 #include "fillit.h"
 
@@ -27,20 +26,21 @@ static void	print_map(char **map, int dim)
 			ft_putchar(map[i][j]);
 			j++;
 		}
+		ft_putchar('\n');
 		i++;
 	}
 }
 
-void	gonokod(t_tetr **head)
+void	govnokod(t_tetr **head)
 {
 	int		dim;
 	char	letter;
 	char	**map;
 
-	dim = 5;
+	dim = 6;
 	letter = 'A';
 	map = create_map(dim);
-	solver(map, head, letter, dim);
-	print_map(map, dim);
+	if ((solver(map, head, letter, dim)) == 1)
+		print_map(map, dim);
 
 }

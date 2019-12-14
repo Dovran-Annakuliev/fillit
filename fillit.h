@@ -50,6 +50,6 @@ int		*ft_change_arr_2(char *tmp, int *arr, int i, int ret);
 int		*ft_change_arr_3(char *tmp, int *arr, int *arr2, int i);
 char	**create_map(int dim);
 void	govnokod(t_tetr **head);
-void 	solver(char **map, t_tetr **current_piece, char letter, int dim);
+int 	solver(char **map, t_tetr **current_piece, char letter, int dim);
 
 #endif
