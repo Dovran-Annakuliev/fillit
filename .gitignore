@@ -6,3 +6,8 @@ cmake-build-debug
 libft/*.o
 libft/libft.a
 a.out
+fillit
+ft_change_arr.o
+ft_read.o
+ft_check.o
+main.o
