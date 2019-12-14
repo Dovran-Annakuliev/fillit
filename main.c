@@ -6,7 +6,7 @@
 /*   By: rfork <rfork@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/28 18:23:28 by rfork             #+#    #+#             */
-/*   Updated: 2019/12/14 17:46:04 by ltammie          ###   ########.fr       */
+/*   Updated: 2019/12/14 18:24:38 by ltammie          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ int	main(int argc, char **argv)
 	int		i;
 	int		count;
 	t_tetr	*head;
+	char	**map;
 
 
 	i = -1;
@@ -33,8 +34,8 @@ int	main(int argc, char **argv)
 		if (i % 8 == 0)
 			printf("\n\n");
 		printf("%d", arr2[i]);
-		if (i % 2 == 0)
-			printf(" ", arr2[i]);
+		//if (i % 2 == 0)
+			//printf(" ", arr2[i]);
 //		else
 //			printf("y = %d\n", arr2[i]);
 	}
@@ -68,5 +69,7 @@ int	main(int argc, char **argv)
 		printf("%d - %d\n", tmp->x4, tmp->y4);
 		tmp = tmp->next;
 	}
-	return (0);
+
+	map = create_map(9);
+
 }
