@@ -6,7 +6,7 @@
 /*   By: rfork <rfork@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/28 18:23:36 by rfork             #+#    #+#             */
-/*   Updated: 2019/12/14 18:16:21 by ltammie          ###   ########.fr       */
+/*   Updated: 2019/12/14 19:34:08 by ltammie          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,5 +49,7 @@ int		*ft_change_arr(char *tmp, int count, int *arr2);
 int		*ft_change_arr_2(char *tmp, int *arr, int i, int ret);
 int		*ft_change_arr_3(char *tmp, int *arr, int *arr2, int i);
 char	**create_map(int dim);
+void	govnokod(t_tetr **head);
+void 	solver(char **map, t_tetr **current_piece, char letter, int dim);
 
 #endif

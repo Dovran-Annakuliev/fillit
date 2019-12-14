@@ -6,7 +6,7 @@
 /*   By: rfork <rfork@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/28 18:23:28 by rfork             #+#    #+#             */
-/*   Updated: 2019/12/14 18:24:38 by ltammie          ###   ########.fr       */
+/*   Updated: 2019/12/14 19:29:40 by ltammie          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,6 @@ int	main(int argc, char **argv)
 	int		i;
 	int		count;
 	t_tetr	*head;
-	char	**map;
-
 
 	i = -1;
 	arr = ft_read(argc, argv);
@@ -70,6 +68,7 @@ int	main(int argc, char **argv)
 		tmp = tmp->next;
 	}
 
-	map = create_map(9);
+	govnokod(&head);
+	return (0);
 
 }
