@@ -6,13 +6,12 @@
 /*   By: rfork <rfork@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/28 18:23:36 by rfork             #+#    #+#             */
-/*   Updated: 2019/12/11 19:59:22 by rfork            ###   ########.fr       */
+/*   Updated: 2019/12/14 16:54:16 by ltammie          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FILLIT_H
 # define FILLIT_H
-# define BUFF_SIZE 10000
 
 # include <sys/types.h>
 # include <sys/stat.h>
@@ -22,6 +21,22 @@
 # include <unistd.h>
 
 # include "libft/libft.h"
+
+typedef struct		s_tetr
+{
+	int x1;
+	int y1;
+	int x2;
+	int y2;
+	int x3;
+	int y3;
+	int x4;
+	int y4;
+	int placed;
+	struct s_tetr *next;
+}					t_tetr;
+
+t_tetr	*new_tetr(t_tetr **head);
 
 int		main(int argc, char **argv);
 char	*ft_read(int argc, char **argv);
@@ -33,9 +48,5 @@ int		check_4(char *tmp, int ret, int count, int check);
 int		*ft_change_arr(char *tmp, int count, int *arr2);
 int		*ft_change_arr_2(char *tmp, int *arr, int i, int ret);
 int		*ft_change_arr_3(char *tmp, int *arr, int *arr2, int i);
-char	**ft_old_change_arr(char *tmp, int count);
-char	**ft_old_change_arr_2(char *tmp, int count, int heg, int len);
-char	**ft_old_change_arr_3(char **arr, int ret, int *arr2);
-char	**ft_old_change_arr_4(char **arr, int ret, int *arr2);
 
 #endif
