@@ -24,7 +24,7 @@ char	*ft_read(int argc, char **argv)
 		&& (read(fd, buf, 0)) < 0))
 		ft_error(1);
 	ret = read(fd, buf, 546);
-	printf("ret = %d\n", ret);
+//	printf("ret = %d\n", ret);
 	if (ret < 20 || ret > 545 || ((ret + 1) % 21))
 		ft_error(0);
 	buf[ret] = '\0';

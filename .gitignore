@@ -7,3 +7,4 @@ cmake-build-debug
 libft/libft.a
 a.out
 fillit
+fillit.dSYM

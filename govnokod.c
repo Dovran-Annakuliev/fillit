@@ -6,7 +6,7 @@
 /*   By: ltammie <ltammie@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/14 19:36:22 by ltammie           #+#    #+#             */
-/*   Updated: 2019/12/14 21:13:55 by ltammie          ###   ########.fr       */
+/*   Updated: 2019/12/18 13:08:04 by rfork            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,17 +17,13 @@ static void	print_map(char **map, int dim)
 	int i;
 	int j;
 
-	i = 0;
-	while (i < dim)
+	i = -1;
+	while (++i < dim)
 	{
-		j = 0;
-		while (j < dim)
-		{
+		j = -1;
+		while (++j < dim)
 			ft_putchar(map[i][j]);
-			j++;
-		}
 		ft_putchar('\n');
-		i++;
 	}
 }
 
@@ -51,6 +47,5 @@ void	govnokod(t_tetr **head)
 		dim++;
 		map = create_map(dim);
 	}
-
-
+	free(map);
 }

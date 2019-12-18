@@ -22,25 +22,20 @@ char **create_map(int dim)
 	int j;
 	char **map;
 
-	i = 0;
+	i = -1;
 	if (!(map = (char **)malloc(sizeof(char *) * dim)))
-		ft_error(1);
-	while (i < dim)
+		ft_error(0);
+	while (++i < dim)
 	{
 		if (!(map[i] = (char *)malloc(sizeof(char) * dim)))
-			ft_error(1);
-		i++;
+			ft_error(0);
 	}
-	i = 0;
-	while (i < dim)
+	i = -1;
+	while (++i < dim)
 	{
-		j = 0;
-		while (j < dim)
-		{
+		j = -1;
+		while (++j < dim)
 			map[i][j] = '.';
-			j++;
-		}
-		i++;
 	}
 	return (map);
 }

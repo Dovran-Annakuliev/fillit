@@ -6,7 +6,7 @@
 /*   By: rfork <rfork@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/28 18:23:28 by rfork             #+#    #+#             */
-/*   Updated: 2019/12/14 21:15:58 by ltammie          ###   ########.fr       */
+/*   Updated: 2019/12/18 14:08:49 by rfork            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,10 +23,11 @@ int	main(int argc, char **argv)
 	i = -1;
 	arr = ft_read(argc, argv);
 	count = ft_check(arr);
-	printf("%s", arr);
-	printf("\ncount = %d\n", count);
+//	printf("%s", arr);
+//	printf("\ncount = %d\n", count);
 	arr2 = (int*)malloc(sizeof(int) * (count * 8));
 	arr2 = ft_change_arr(arr, count, arr2);
+	ft_strdel(&arr);
 	/*
 	 * while (++i != (count * 8))
 	{
@@ -54,7 +55,6 @@ int	main(int argc, char **argv)
 		new->y4 = arr2[++i];
 		new->x4 = arr2[++i];
 	}
-	free(arr);
 	free(arr2);
 
 	//printing list

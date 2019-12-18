@@ -82,11 +82,11 @@ int 	solver(char **map, t_tetr **current_piece, char letter, int dim)
 	int		shift_j;
 
 	//ft_putchar(letter);
-	i = 0;
-	while (i < dim)
+	i = -1;
+	while (++i < dim)
 	{
-		j = 0;
-		while (j < dim)
+		j = -1;
+		while (++j < dim)
 		{
 			if (map[i][j] == '.')
 			{
@@ -106,9 +106,7 @@ int 	solver(char **map, t_tetr **current_piece, char letter, int dim)
 					}
 				}
 			}
-			j++;
 		}
-		i++;
 	}
 	if ((*current_piece)->placed == 0)
 		return (0);
