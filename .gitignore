@@ -8,3 +8,4 @@ libft/libft.a
 a.out
 fillit
 fillit.dSYM
+*.txt

@@ -6,7 +6,7 @@
 /*   By: rfork <rfork@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/30 16:21:37 by rfork             #+#    #+#             */
-/*   Updated: 2019/12/21 15:52:28 by ltammie          ###   ########.fr       */
+/*   Updated: 2019/12/21 17:21:12 by rfork            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ int		ft_check_2(char *tmp, int ret, int count, int dve_grani)
 	int kol_resh;
 
 	kol_resh = 0;
+//	printf("%d\n", count);
 	while (tmp[++ret])
 	{
 		if (tmp[ret] == '.' || tmp[ret] == '#' || check_4(tmp, ret, count, 0))
@@ -42,16 +43,20 @@ int		ft_check_2(char *tmp, int ret, int count, int dve_grani)
 			}
 			if (check_4(tmp, ret, count, 1))
 			{
+//				printf("%d\n", kol_resh);
+				if (kol_resh != 4)
+					ft_error(0);
 				ret = ret + 2;
 				dve_grani = 0;
 				kol_resh = 0;
 				count++;
+//				printf("%d\n", count);
 			}
 		}
 		else
 			ft_error(0);
 	}
-	return (++count);
+	return (count);
 }
 
 int		ft_check_3(int ret, char *tmp, int dve_grani, int count)
@@ -74,11 +79,20 @@ int		ft_check_3(int ret, char *tmp, int dve_grani, int count)
 
 int		check_4(char *tmp, int ret, int count, int check)
 {
+	int a;
+
 	if (check == 1)
 	{
 		if (tmp[ret] == '\n' && tmp[ret + 1] == '\n'
 			&& (ret - count + 1) % 5 == 0)
 			return (1);
+		a = ((ret - count + 1) / (5 * (count + 1)));
+//		printf("%d\n", a);
+		if (tmp[ret] == '\n' && (ret - count + 1) % 5 == 0 && (((ret - count + 1) / (5 * (count + 1))) == 4))
+		{
+//			printf("\n\n\n%d\n", a);
+			return (1);
+		}
 	}
 	else if (tmp[ret] == '\n' && (ret - count + 1) % 5 == 0)
 		return (1);
