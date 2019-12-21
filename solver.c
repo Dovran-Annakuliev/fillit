@@ -6,13 +6,13 @@
 /*   By: ltammie <ltammie@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/14 18:32:43 by ltammie           #+#    #+#             */
-/*   Updated: 2019/12/14 21:47:53 by ltammie          ###   ########.fr       */
+/*   Updated: 2019/12/21 21:16:16 by rfork            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fillit.h"
 
-static void	change_coords(t_tetr **current_piece, int shift_i, int shift_j)
+static void		change_coords(t_tetr **current_piece, int shift_i, int shift_j)
 {
 	if ((*current_piece)->placed == 0)
 	{
@@ -28,23 +28,23 @@ static void	change_coords(t_tetr **current_piece, int shift_i, int shift_j)
 }
 
 /*
- * Чекаем, не вылезает ли фигурка за границы карты
- */
+** Чекаем, не вылезает ли фигурка за границы карты
+*/
 
-static int 		check_coords(t_tetr **current_piece, int dim)
+static int		check_coords(t_tetr **current_piece, int dim)
 {
 	if (((*current_piece)->x1 >= dim) || ((*current_piece)->x2 >= dim)
 		|| ((*current_piece)->x3 >= dim) || ((*current_piece)->x4 >= dim))
-		return 0;
+		return (0);
 	else if ((*current_piece)->y1 < 0 || (*current_piece)->y1 >= dim)
-		return 0;
+		return (0);
 	else if ((*current_piece)->y2 < 0 || (*current_piece)->y2 >= dim)
-		return 0;
+		return (0);
 	else if ((*current_piece)->y3 < 0 || (*current_piece)->y3 >= dim)
-		return 0;
+		return (0);
 	else if ((*current_piece)->y4 < 0 || (*current_piece)->y4 >= dim)
-		return 0;
-	return 1;
+		return (0);
+	return (1);
 }
 
 static int		place_piece(char **map, t_tetr **current_piece, char letter)
@@ -74,14 +74,13 @@ static void		remove_piece(char **map, t_tetr **current_piece)
 	(*current_piece)->placed = 0;
 }
 
-int 	solver(char **map, t_tetr **current_piece, char letter, int dim)
+int				solver(char **map, t_tetr **current_piece, char letter, int dim)
 {
 	int		i;
 	int		j;
-	int 	shift_i;
+	int		shift_i;
 	int		shift_j;
 
-	//ft_putchar(letter);
 	i = -1;
 	while (++i < dim)
 	{
@@ -101,7 +100,8 @@ int 	solver(char **map, t_tetr **current_piece, char letter, int dim)
 						{
 							if ((solver(map, &(*current_piece)->next, letter + 1, dim)) == 0)
 								remove_piece(map, current_piece);
-						} else if ((*current_piece)->placed == 1)
+						}
+						else if ((*current_piece)->placed == 1)
 							return (1);
 					}
 				}

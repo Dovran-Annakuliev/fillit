@@ -6,7 +6,7 @@
 /*   By: rfork <rfork@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/28 18:23:28 by rfork             #+#    #+#             */
-/*   Updated: 2019/12/21 18:22:59 by rfork            ###   ########.fr       */
+/*   Updated: 2019/12/21 21:07:18 by rfork            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,8 @@ int	main(int argc, char **argv)
 	int		count;
 	t_tetr	*head;
 
-	arr = ft_read(argc, argv);
+	arr = ft_read(argc, argv, 0, 0);
 	count = ft_count_tetrs(arr, -1, 0);
-//	printf("\ncount = %d\n", count);
 	arr2 = (int*)malloc(sizeof(int) * (count * 8));
 	arr2 = ft_change_arr(arr, count, arr2);
 	ft_strdel(&arr);

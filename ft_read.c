@@ -6,32 +6,21 @@
 /*   By: rfork <rfork@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/29 17:01:02 by rfork             #+#    #+#             */
-/*   Updated: 2019/12/21 19:27:33 by rfork            ###   ########.fr       */
+/*   Updated: 2019/12/21 21:08:23 by rfork            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fillit.h"
 
-char	*ft_read(int argc, char **argv)
+char	*ft_read(int argc, char **argv, int fd, int ret)
 {
-	int		fd;
 	char	buf[21];
-	int		ret;
 	char	*arr;
 	char	*temp;
 
-	fd = 0;
 	if (argc != 2 || (((fd = open(argv[1], O_RDONLY)) < 0)
 		&& (read(fd, buf, 0)) < 0))
 		ft_error(1);
-//	ret = read(fd, buf, 546);
-////	printf("ret = %d\n", ret);
-//	if (ret < 20 || ret > 545 || ((ret + 1) % 21))
-//		ft_error(0);
-//	buf[ret] = '\0';
-//	if(!(arr = ft_strdup(buf)))
-//		ft_error(0);
-//	return (arr);
 	if (!(arr = ft_strnew(0)))
 		ft_error(0);
 	while ((ret = read(fd, buf, 21)) > 0)

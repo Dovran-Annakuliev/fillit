@@ -6,13 +6,13 @@
 /*   By: rfork <rfork@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/21 18:14:46 by rfork             #+#    #+#             */
-/*   Updated: 2019/12/21 19:35:50 by rfork            ###   ########.fr       */
+/*   Updated: 2019/12/21 21:04:04 by rfork            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fillit.h"
 
-int ft_count_tetrs(char *arr, int i, int count)
+int		ft_count_tetrs(char *arr, int i, int count)
 {
 	int n;
 

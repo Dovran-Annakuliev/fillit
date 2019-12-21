@@ -6,20 +6,20 @@
 /*   By: rfork <rfork@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/21 17:40:44 by rfork             #+#    #+#             */
-/*   Updated: 2019/12/21 19:11:40 by rfork            ###   ########.fr       */
+/*   Updated: 2019/12/21 21:04:25 by rfork            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fillit.h"
 
-int ft_check_new(char *buf, int i)
+int		ft_check_new(char *buf, int i)
 {
 	int sharps;
 	int edges;
 
 	sharps = 0;
 	edges = 0;
-	while(buf[++i])
+	while (buf[++i])
 	{
 		if (buf[i] != '.' && buf[i] != '#' && buf[i] != '\n')
 			ft_error(0);

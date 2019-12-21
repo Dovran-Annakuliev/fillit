@@ -6,7 +6,7 @@
 /*   By: ltammie <ltammie@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/14 16:30:23 by ltammie           #+#    #+#             */
-/*   Updated: 2019/12/14 17:32:05 by ltammie          ###   ########.fr       */
+/*   Updated: 2019/12/21 21:13:00 by rfork            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,8 @@ t_tetr	*new_tetr(t_tetr **head)
 
 	tmp = *head;
 	if (tmp)
-	{
 		while (tmp->next)
 			tmp = tmp->next;
-	}
 	if (!(new = (t_tetr *)malloc(sizeof(t_tetr))))
 		ft_error(1);
 	if (*head)

@@ -6,7 +6,7 @@
 /*   By: ltammie <ltammie@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/14 19:36:22 by ltammie           #+#    #+#             */
-/*   Updated: 2019/12/21 20:50:42 by rfork            ###   ########.fr       */
+/*   Updated: 2019/12/21 21:09:51 by rfork            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ static int		ftt_sqrt(int nb)
 	return (0);
 }
 
-static void	print_map(char **map, int dim)
+static void		print_map(char **map, int dim)
 {
 	int i;
 	int j;
@@ -41,7 +41,7 @@ static void	print_map(char **map, int dim)
 	}
 }
 
-static void ft_free_map(char **map, int dim)
+static void		ft_free_map(char **map, int dim)
 {
 	int i;
 
@@ -51,7 +51,7 @@ static void ft_free_map(char **map, int dim)
 	free(map);
 }
 
-void govnokod(t_tetr **head, int count)
+void			govnokod(t_tetr **head, int count)
 {
 	int		dim;
 	char	letter;
@@ -59,19 +59,16 @@ void govnokod(t_tetr **head, int count)
 
 	dim = ftt_sqrt(count * 4);
 	letter = 'A';
-
 	while (1)
 	{
-		//ft_putnbr(dim);
 		map = create_map(dim);
 		if ((solver(map, head, letter, dim)) == 1)
 		{
 			print_map(map, dim);
 			ft_free_map(map, dim);
-			break;
+			break ;
 		}
 		ft_free_map(map, dim);
 		dim++;
 	}
-//ft_free_map(map);
 }
