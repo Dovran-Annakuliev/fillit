@@ -6,11 +6,25 @@
 /*   By: ltammie <ltammie@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/14 19:36:22 by ltammie           #+#    #+#             */
-/*   Updated: 2019/12/18 13:08:04 by rfork            ###   ########.fr       */
+/*   Updated: 2019/12/21 14:03:45 by ltammie          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fillit.h"
+
+static int		ftt_sqrt(int nb)
+{
+	int counter;
+
+	counter = 1;
+	while (counter < nb)
+	{
+		if (counter * counter >= nb)
+			return (counter);
+		counter++;
+	}
+	return (0);
+}
 
 static void	print_map(char **map, int dim)
 {
@@ -27,13 +41,13 @@ static void	print_map(char **map, int dim)
 	}
 }
 
-void	govnokod(t_tetr **head)
+void	govnokod(t_tetr **head, int count)
 {
 	int		dim;
 	char	letter;
 	char	**map;
 
-	dim = 4;
+	dim = ftt_sqrt(count * 4);
 	letter = 'A';
 	map = create_map(dim);
 	while (1)

@@ -6,7 +6,7 @@
 /*   By: rfork <rfork@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/28 18:23:28 by rfork             #+#    #+#             */
-/*   Updated: 2019/12/18 14:08:49 by rfork            ###   ########.fr       */
+/*   Updated: 2019/12/21 13:38:03 by ltammie          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,23 +23,10 @@ int	main(int argc, char **argv)
 	i = -1;
 	arr = ft_read(argc, argv);
 	count = ft_check(arr);
-//	printf("%s", arr);
 //	printf("\ncount = %d\n", count);
 	arr2 = (int*)malloc(sizeof(int) * (count * 8));
 	arr2 = ft_change_arr(arr, count, arr2);
 	ft_strdel(&arr);
-	/*
-	 * while (++i != (count * 8))
-	{
-		if (i % 8 == 0)
-			printf("\n\n");
-		printf("%d", arr2[i]);
-		if (i % 2 == 0)
-			printf(" ", arr2[i]);
-		else
-			printf("y = %d\n", arr2[i]);
-	}
-	 */
 	i = -1;
 	head = NULL;
 	while (++i < (count * 8))
@@ -56,23 +43,6 @@ int	main(int argc, char **argv)
 		new->x4 = arr2[++i];
 	}
 	free(arr2);
-
-	//printing list
-	/*
-	 * printf("\nprinting list\n");
-	t_tetr *tmp = head;
-	while(tmp)
-	{
-		printf(".....................\n");
-		printf("%d - %d\n", tmp->x1, tmp->y1);
-		printf("%d - %d\n", tmp->x2, tmp->y2);
-		printf("%d - %d\n", tmp->x3, tmp->y3);
-		printf("%d - %d\n", tmp->x4, tmp->y4);
-		tmp = tmp->next;
-	}
-	*/
-
-	govnokod(&head);
+	govnokod(&head, count);
 	return (0);
-
 }

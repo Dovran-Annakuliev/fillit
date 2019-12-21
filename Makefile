@@ -6,7 +6,7 @@
 #    By: rfork <rfork@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/09/06 17:29:02 by rfork             #+#    #+#              #
-#    Updated: 2019/12/18 14:09:29 by rfork            ###   ########.fr        #
+#    Updated: 2019/12/21 13:16:38 by ltammie          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,17 +23,17 @@ all: $(NAME)
 		$(GCC) -c $<
 
 lib:
-        make -C libft
+	make -C libft
 
 $(NAME): $(OBJS) lib
 		$(GCC) $(OBJS) $(LIB) -o $(NAME)
 
 clean:
-		rm -f $(OBJS)
-		make -C libft clean
+	rm -f $(OBJS)
+	make -C libft clean
 
 fclean: clean
 		rm -f $(NAME)
-        make -C libft fclean
+		make -C libft fclean
 
 re: fclean all
