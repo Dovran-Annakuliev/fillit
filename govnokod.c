@@ -6,7 +6,7 @@
 /*   By: ltammie <ltammie@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/14 19:36:22 by ltammie           #+#    #+#             */
-/*   Updated: 2019/12/21 14:03:45 by ltammie          ###   ########.fr       */
+/*   Updated: 2019/12/21 19:48:03 by rfork            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,16 @@ static void	print_map(char **map, int dim)
 	}
 }
 
+static void ft_free_map(char **map)
+{
+	int i;
+
+	i = -1;
+	while (map[++i])
+		free(map[i]);
+	free(map);
+}
+
 void	govnokod(t_tetr **head, int count)
 {
 	int		dim;
@@ -59,7 +69,8 @@ void	govnokod(t_tetr **head, int count)
 			break;
 		}
 		dim++;
+		ft_free_map(map);
 		map = create_map(dim);
 	}
-	free(map);
+	ft_free_map(map);
 }
