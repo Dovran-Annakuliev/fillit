@@ -6,7 +6,7 @@
 /*   By: rfork <rfork@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/28 18:23:36 by rfork             #+#    #+#             */
-/*   Updated: 2019/12/21 13:54:42 by ltammie          ###   ########.fr       */
+/*   Updated: 2019/12/21 19:59:36 by ltammie          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,7 @@ typedef struct		s_tetr
 }					t_tetr;
 
 t_tetr	*new_tetr(t_tetr **head);
+void	delete_tetr(t_tetr **head);
 
 int		main(int argc, char **argv);
 char	*ft_read(int argc, char **argv);

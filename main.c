@@ -43,5 +43,6 @@ int	main(int argc, char **argv)
 	}
 	free(arr2);
 	govnokod(&head, count);
+	delete_tetr(&head);
 	return (0);
 }

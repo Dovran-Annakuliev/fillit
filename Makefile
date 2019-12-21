@@ -12,7 +12,7 @@
 
 GCC = gcc -Wall -Wextra -Werror -g
 NAME = fillit
-SRCS = main.c ft_read.c ft_check_new.c ft_count_tetrs.c ft_change_arr.c govnokod.c new_tetr.c solver.c create_map.c
+SRCS = main.c ft_read.c ft_check_new.c ft_count_tetrs.c ft_change_arr.c govnokod.c new_tetr.c delete_tetr.c solver.c create_map.c
 OBJS = $(SRCS:.c=.o)
 HEAD = -c -I fillit.h
 LIB = -L libft -lft
