@@ -20,7 +20,7 @@
 # include <stdlib.h>
 # include <unistd.h>
 
-# include "libft/libft.h"
+# include "../libft/libft.h"
 
 typedef	struct		s_tetr
 {
@@ -46,7 +46,7 @@ int					*ft_change_arr(char *tmp, int count, int *arr2);
 int					*ft_change_arr_2(char *tmp, int *arr, int i, int ret);
 int					*ft_change_arr_3(char *tmp, int *arr, int *arr2, int i);
 char				**create_map(int dim);
-void				govnokod(t_tetr **head, int count);
+void				start(t_tetr **head, int count);
 int					solver(char **map, t_tetr **current_piece,
 					char le, int dim);
 int					ft_count_tetrs(char *arr, int i, int count);

@@ -6,20 +6,29 @@
 #    By: rfork <rfork@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/09/06 17:29:02 by rfork             #+#    #+#              #
-#    Updated: 2019/12/21 17:10:30 by rfork            ###   ########.fr        #
+#    Updated: 2020/05/26 11:57:55 by dovran           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-GCC = gcc -Wall -Wextra -Werror -g
+GCC = gcc -Wall -Wextra -Werror
 NAME = fillit
-SRCS = main.c ft_read.c ft_check_new.c ft_count_tetrs.c ft_change_arr.c govnokod.c new_tetr.c delete_tetr.c solver.c create_map.c
+SRCS = sources/main.c\
+		sources/ft_read.c\
+		sources/ft_check_new.c\
+		sources/ft_count_tetrs.c\
+		sources/ft_change_arr.c\
+		sources/start.c\
+		sources/new_tetr.c\
+		sources/delete_tetr.c\
+		sources/solver.c\
+		sources/create_map.c
 OBJS = $(SRCS:.c=.o)
-HEAD = -c -I fillit.h
+HEAD = -c -I includes/fillit.h
 LIB = -L libft -lft
 
 all: $(NAME)
 
-%.o: %.c
+(sources)%.o: %.c
 		$(GCC) -c $<
 
 lib:

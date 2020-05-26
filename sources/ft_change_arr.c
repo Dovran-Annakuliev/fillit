@@ -6,11 +6,11 @@
 /*   By: rfork <rfork@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/11 19:59:07 by rfork             #+#    #+#             */
-/*   Updated: 2019/12/21 13:52:56 by ltammie          ###   ########.fr       */
+/*   Updated: 2020/05/25 18:51:10 by dovran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "fillit.h"
+#include "../includes/fillit.h"
 
 int	*ft_change_arr(char *tmp, int count, int *arr2)
 {

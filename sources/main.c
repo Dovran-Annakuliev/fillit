@@ -6,11 +6,11 @@
 /*   By: rfork <rfork@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/28 18:23:28 by rfork             #+#    #+#             */
-/*   Updated: 2019/12/23 14:26:26 by ltammie          ###   ########.fr       */
+/*   Updated: 2020/05/25 18:52:47 by dovran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "fillit.h"
+#include "../includes/fillit.h"
 
 int	main(int argc, char **argv)
 {
@@ -30,7 +30,7 @@ int	main(int argc, char **argv)
 	while (++i < (count * 8))
 		i = new_tetr(&head, i, coords);
 	free(coords);
-	govnokod(&head, count);
+	start(&head, count);
 	delete_tetr(&head);
 	return (0);
 }

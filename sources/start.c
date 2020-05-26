@@ -6,11 +6,11 @@
 /*   By: ltammie <ltammie@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/14 19:36:22 by ltammie           #+#    #+#             */
-/*   Updated: 2019/12/23 14:13:33 by ltammie          ###   ########.fr       */
+/*   Updated: 2020/05/25 18:52:47 by dovran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "fillit.h"
+#include "../includes/fillit.h"
 
 static int		ftt_sqrt(int nb)
 {
@@ -51,7 +51,7 @@ static void		ft_free_map(char **map, int dim)
 	free(map);
 }
 
-void			govnokod(t_tetr **head, int count)
+void			start(t_tetr **head, int count)
 {
 	int		dim;
 	char	letter;

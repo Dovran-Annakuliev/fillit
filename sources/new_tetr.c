@@ -6,11 +6,11 @@
 /*   By: ltammie <ltammie@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/14 16:30:23 by ltammie           #+#    #+#             */
-/*   Updated: 2019/12/23 14:22:52 by ltammie          ###   ########.fr       */
+/*   Updated: 2020/05/25 18:51:11 by dovran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "fillit.h"
+#include "../includes/fillit.h"
 
 int	new_tetr(t_tetr **head, int i, int *coords)
 {

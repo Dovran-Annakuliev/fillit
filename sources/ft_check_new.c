@@ -6,11 +6,11 @@
 /*   By: rfork <rfork@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/21 17:40:44 by rfork             #+#    #+#             */
-/*   Updated: 2019/12/21 21:04:25 by rfork            ###   ########.fr       */
+/*   Updated: 2020/05/25 18:51:10 by dovran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "fillit.h"
+#include "../includes/fillit.h"
 
 int		ft_check_new(char *buf, int i)
 {

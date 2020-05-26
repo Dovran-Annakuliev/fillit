@@ -6,11 +6,11 @@
 /*   By: ltammie <ltammie@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/14 18:32:43 by ltammie           #+#    #+#             */
-/*   Updated: 2019/12/23 14:43:29 by ltammie          ###   ########.fr       */
+/*   Updated: 2020/05/25 18:51:11 by dovran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "fillit.h"
+#include "../includes/fillit.h"
 
 static void		change_coords(t_tetr **current_piece, int shift_i, int shift_j)
 {
